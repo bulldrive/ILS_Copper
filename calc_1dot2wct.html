@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Set with urrent transformers</title>
+	<link href="css/styles.css" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body bgcolor="grey">
+
+<table cellspacing="2" border cellpadding="5">
+    <tr>
+        <td>
+<form name="inputdata" action="" method="POST">
+<fieldset>
+<legend>Input data:</legend>
+	<label>Please input number of sets of basbar (1 or 2)</label><br>
+	<input id="busbar" Value=1><br>
+
+	<label>Please input thickness of copper (mm) 10 or 12<br> [parameter "T":]</label><br>
+	<input type="number" id="thinkness" Value=10><br>
+
+	<label>Please input distance from terminal to busbar (mm):</label><br>
+	<input type="number" id="distBusbarTerm" Value=790><br>
+
+	<label>Please input distance from back to terminal (mm):</label><br>
+	<input type="number" id="distBackTerm" Value=487><br>
+
+	<label>Please input amperage (A):</label><br>
+	<input type="number" id="amperage" Value=1250><br>
+
+<button type="button" onclick="StripSize()">Calculate</button> <input type="reset">
+	</fieldset>
+</form>
+<b>Calculation of stripes length</b>
+<table border=1>
+    <tbody>
+      <tr><td>Lenth stripe S1 for L3:</td><td id="stripe_1_L3"></td></tr>
+      <tr><td>Lenth stripe S2 for L3:</td><td id="stripe_2_L3"></td></tr>
+      <tr><td>Lenth stripe S1 for L2:</td><td id="stripe_1_L2"></td></tr>
+      <tr><td>Lenth stripe S2 for L2:</td><td id="stripe_2_L2"></td></tr>
+      <tr><td>Lenth stripe S1 for L1:</td><td id="stripe_1_L1"></td></tr>
+      <tr><td>Lenth stripe S2 for L1:</td><td id="stripe_2_L1"></td></tr>
+      <tr><td>Lenth stripe S1 for N:</td><td id="stripe_1_N"></td></tr>
+      <tr><td>Lenth stripe S2 for N:</td><td id="stripe_2_N"></td></tr>
+    </tbody>
+  </table>
+
+        </td>
+        <td align="left"><img src="drafts/e_12_1600_full_01.jpg" alt="E1.2" width="480" ></td>
+    </tr>
+    <tr>
+        <td>
+  <b>Calculation of bending</b>
+  <table border=1>
+    <tbody>
+      <tr><td>1</td><td>L1, L2: S1 bend 1</td><td id="s1L12Bend1"></td></tr>
+      <tr><td>2</td><td>L1, L2: S1 bend 2</td><td id="s1L12Bend2"></td></tr>
+      <tr><td>3</td><td>L1, L2: S1 bend 3</td><td id="s1L12Bend3"></td><td>(adding 10)</td></tr>
+      <tr><td>4</td><td>L1, L2: S2 bend 1</td><td id="s2L12Bend1"></td></tr>
+      <tr><td>5</td><td>L1, L2: S2 bend 2</td><td id="s2L12Bend2"></td></tr>
+      <tr><td>6</td><td>L1, L2: S2 bend 3</td><td id="s2L12Bend3"></td><td>(adding 10)</td></tr>
+      <tr><td>7</td><td>L1, L2: S2 bend 4</td><td id="s2L12Bend4"></td></tr>
+      <tr><td>8</td><td>L1, L2: S2 bend 5</td><td id="s2L12Bend5"></td><td>(adding 10)</td></tr>
+    </tbody>
+  </table>
+
+<table border=1>
+    <tbody>
+      <tr><td>9</td><td>L3, N: S1 bend 1</td><td id="s1L3NBend1"></td></tr>
+      <tr><td>10</td><td>L3, N: S1 bend 2</td><td id="s1L3NBend2"></td></tr>
+      <tr><td>11</td><td>L3, N: S1 bend 3</td><td id="s1L3NBend3"></td></tr>
+      <tr><td>12</td><td>L3, N: S1 bend 4</td><td id="s1L3NBend4"></td><td>adding 10</td></tr>
+      <tr><td>13</td><td>L3, N: S1 bend 5</td><td id="s1L3NBend5"></td></tr>
+      <tr><td>14</td><td>L3, N: S2 bend 1</td><td id="s2L3NBend1"></td></tr>
+      <tr><td>15</td><td>L3, N: S2 bend 2</td><td id="s2L3NBend2"></td></tr>
+      <tr><td>16</td><td>L3, N: S2 bend 3</td><td id="s2L3NBend3"></td></tr>
+    </tbody>
+  </table>
+
+        </td>
+        <td><img src="temp/e_1.2.jpg" alt="E1.2" width="480" ></td>
+    </tr>
+</table>
+
+<script src="https://code.jquery.com/jquery-2.1.0.js"></script>
+<script src="js/calc_1dot2wct.js"></script>
+<p>ver. 1.03</p>
+</body>
+</html>

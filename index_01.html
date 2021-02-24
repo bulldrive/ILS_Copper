@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>ILS</title>
+   <script>
+    function zoomin(){
+        var myImg = document.getElementById("e1_2");
+        var currWidth = myImg.clientWidth;
+        if(currWidth == 500){
+            alert("Maximum zoom-in level reached.");
+        } else{
+            myImg.style.width = (currWidth + 50) + "px";
+        } 
+    }
+    function zoomout(){
+        var myImg = document.getElementById("e1_2");
+        var currWidth = myImg.clientWidth;
+        if(currWidth == 50){
+            alert("Maximum zoom-out level reached.");
+        } else{
+            myImg.style.width = (currWidth - 50) + "px";
+        }
+    }
+</script>
+    <style type="text/css" media="screen">
+    </style>
+  </head>
+  <body>
+<h1>The template Element</h1>
+<table border="1" style="border-collapse: collapse; width: 100%;">
+<thead>
+    <tr>
+      <td>Product_Name</td>
+      <td>Calculate</td>
+      <td>Image</td>
+    </tr>
+  </thead>
+<tbody>
+	<tr>
+	<td>E1.2 100A FE</td>
+	<td></td>
+		<td style="text-align: right;"><button type="button" onclick="zoomin()">Zoom In</button><img id="e1_2" src="drafts/e_12_1000_bottom_01.jpg" height="150"</td></tr>
+<tr>
+        <td>E1.2 100A FE</td>
+        <td></td>
+                <td style="text-align: right;"><button type="button" onclick="zoomin()">Zoom In</button> <img id="e1_2" src="drafts/e_12_1600_full_01.jpg" height="150"</td></tr>
+</tbody>
+</table>
+
+  </body>
+</html>

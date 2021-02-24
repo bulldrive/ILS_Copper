@@ -1,0 +1,19 @@
+
+// amperage = [630, 800, 1000, 1250, 1600];
+function getListContent() {
+    let amperage = [630, 800, 1000, 1250, 1600];
+    console.log(amperage.length);
+    for (var i = 0; i < amperage.length; i++) {
+        $("body").append("<p>" + amperage[i] + "</p>");
+        console.log(i);
+    }
+    return amperage;
+}
+ampList.append(...getListContent());
+
+/*
+document.body.append(amperage);
+for (i = 0; i < amperage.length; i++) {
+    console.log(amperage[i]);
+}
+*/

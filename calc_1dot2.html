@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+        <meta charset="utf-8">
+        <title>Calculation</title>
+        <link href="css/styles.css" rel="stylesheet">
+</head>
+<body>
+<h1>Расчёт параметров шин для Е1.2 без трансформатора тока</h1>
+<img src="drafts/e_12_1600_full_02.jpg" alt="E1.2" width="480" >
+<form name="inputdata" action="" method="POST">
+	<fieldset>
+    <legend>Input data:</legend>
+<label>Please input thickness of copper (mm)<br> [parameter "t":]</label><br>
+<input type="number" id="t" Value=10><br>
+
+<label>Please input parameter "h":</label><br>
+<input type="number" id="h" Value=790><br>
+
+<label>Please input parameter "bb":</label><br>
+<input type="number" id="bb" Value=294><br>
+
+<label>Please input amperage:</label><br>
+<input type="number" id="amperage" Value=630><br>
+
+<button type="button" onclick="copperlength()">Calculate</button>
+	</fieldset>
+</form>
+
+
+<table>
+	<caption>Inserted data</caption>
+    <tbody>
+      <tr>
+        <th>Thickness of copper "t"</th><td id="rest"></td>
+        </tr>
+        <th>High "h"</th><td id="resh"></td>
+        <tr>
+        <th>Size from back "bb"</th><td id="resbb"></td>
+        </tr>
+        <th>Amperage</th><td id="resamperage"></td>
+    </tr>
+      </tr>
+      <tr>
+        
+      </tr>
+    </tbody>
+</table>
+
+<table>
+	<caption>Lenght of copper</caption>
+    <tbody>
+      <tr>
+        <th scope="row">L3S1</th><td id="resl3s1"></td>
+      </tr>
+      <tr>
+        <th scope="row">L3S2</th><td id="resl3s2"></td>
+      </tr>
+        <th scope="row">L2S1</th><td id="resl2s1"></td>
+      <tr>
+        <th scope="row">L2S2</th><td id="resl2s2"></td>
+      </tr>
+      <tr>
+        <th scope="row">L1S1</th><td id="resl1s1"></td>
+      </tr>
+      <tr>
+        <th scope="row">L1S2</th><td id="resl1s2"></td>
+      </tr>
+      <tr>
+        <th scope="row">NS1 (if needed)</th><td id="resns1"></td>
+      </tr>
+      <tr>
+        <th scope="row">NS2 (if needed)</th><td id="resns2"></td>
+      </tr>
+    </tbody>
+</table>
+<button type="button" onclick="calcprogram()">Show programm</button>
+<table>
+	<caption>Bind programm</caption>
+    <tbody>
+      <tr>
+        <th colspan="4">Bending L3S1 and NS1</th>
+      </tr>
+      <tr>
+        <th scope="row">1)</th><td id="tab01"></td><td id="resl3s1">90</td><td rowspan="4" id="corr"></td>
+      </tr>
+      <tr>
+        <th scope="row">2)</th><td id="tab02"></td><td id="resl3s1">10</td>
+      <tr>
+        <th scope="row">3)</th><td id="tab03"></td><td id="resl3s1">10</td>
+      </tr>
+      <tr>
+        <th scope="row">4)</th><td id="tab04"></td><td id="resl3s1">90</td>
+      </tr>
+      <tr>
+        <th colspan="4">Bending L3S2 and NS2</th>
+      </tr>
+      <tr>
+        <th scope="row">5)</th><td id="tab05"></td><td id="resl3s2">90</td><td rowspan="2" id="corr"></td>
+      </tr>
+      <tr>
+        <th scope="row">6)</th><td id="tab06"></td><td id="resl3s2">90</td>
+      <tr>
+        <th colspan="4">Bending L2S1 and L1S1</th>
+      </tr>
+      <tr>
+        <th scope="row">7)</th><td id="tab07"></td><td id="resl2s1">90</td><td rowspan="2" id="corr"></td>
+      </tr>
+      <tr>
+        <th scope="row">8)</th><td id="tab08"></td><td id="resl2s1">90</td>
+      </tr>
+      <tr>
+        <th colspan="4">Bending L2S2 and L1S2</th>
+      </tr>
+      <tr>
+        <th scope="row">9)</th><td id="tab09"></td><td id="resl3s1">90</td><td rowspan="4" id="corr"></td>
+      </tr>
+      <tr>
+        <th scope="row">10)</th><td id="tab10"></td><td id="resl3s1">10</td>
+      <tr>
+        <th scope="row">11)</th><td id="tab11"></td><td id="resl3s1">10</td>
+      </tr>
+      <tr>
+        <th scope="row">12)</th><td id="tab12"></td><td id="resl3s1">90</td>
+      </tr>
+    </tbody>
+</table>
+
+<script src="https://code.jquery.com/jquery-2.1.0.js"></script>
+<script src="js/calc_1dot2.js"></script>
+</body>
+</html>
